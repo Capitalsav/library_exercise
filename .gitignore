@@ -28,3 +28,7 @@
 .ruby-gemset
 
 /config/mongoid.yml
+
+.env
+
+/public/uploads
