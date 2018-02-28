@@ -34,6 +34,12 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'mongoid', '~> 6.1.0'
+gem 'devise'
+gem 'haml-rails'
+gem 'carrierwave'
+gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'mini_magick'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
