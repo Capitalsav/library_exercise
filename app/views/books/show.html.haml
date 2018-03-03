@@ -1,0 +1,32 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @book.name
+%p
+  %b Author:
+  = @book.author
+%p
+  %b Description:
+  = @book.description
+%p
+  %b Status:
+  = @book.status
+
+- if user_signed_in?
+  #book_status_form_place
+  - if @book.status == 'In'
+    = render 'histories/form_create'
+  - elsif @book.status == 'Out' && @book.histories.last.user == current_user
+    = render 'histories/form_edit'
+
+%p History
+- @book.ordered_histories.each do |history|
+  %p
+  = history.user.email
+  = history.taken_in.to_formatted_s(:long)
+  - if history.returned_in.present?
+    = history.returned_in.to_formatted_s(:long)
+
+%p
+= link_to 'Back', books_path
