@@ -34,9 +34,12 @@ class User
   field :confirmation_sent_at, type: Time
   field :unconfirmed_email,    type: String # Only if using reconfirmable
 
+  field :name, type: String
   field :avatar, type: String
 
   validates_processing_of :avatar
+
+  has_many :histories, dependent: :destroy
 
   def will_save_change_to_email?
     false

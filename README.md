@@ -1,3 +1,39 @@
+# Library
+
+After you clone this project:
+
+* Open rails c
+
+* Run rake task to create books in database: 
+  
+    ##### rake create_books:create_new_books
+  
+### Project description:
+
+* Ruby version 
+
+    ##### 2.4.1
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+
+
+
+
+
 # Library exercise
 
 Test exercise for Rails developers.
