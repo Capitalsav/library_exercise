@@ -40,6 +40,8 @@ class User
   validates_processing_of :avatar
 
   has_many :histories, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   def will_save_change_to_email?
     false
