@@ -20,6 +20,17 @@
   - elsif @book.status == 'Out' && @book.histories.last.user == current_user
     = render 'histories/form_edit'
 
+%p Comments
+#comments_container
+  - @book.comments.each do |comment|
+    %p
+    = comment.user.name
+    = comment.comment_time.to_formatted_s(:long)
+    = comment.text
+
+- if user_signed_in?
+  = render 'comments/form'
+
 %p History
 - @book.ordered_histories.each do |history|
   %p

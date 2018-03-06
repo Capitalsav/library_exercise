@@ -1,25 +1,19 @@
 class LikesController < ApplicationController
-  before_action :set_like, only: [:show, :edit, :update, :destroy]
+  before_action :set_like, only: :update
 
   # GET /likes
   # GET /likes.json
-  def index
-    @likes = Like.all
-  end
+  def index; end
 
   # GET /likes/1
   # GET /likes/1.json
-  def show
-  end
+  def show; end
 
   # GET /likes/new
-  def new
-    @like = Like.new
-  end
+  def new; end
 
   # GET /likes/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /likes
   # POST /likes.json
@@ -53,22 +47,17 @@ class LikesController < ApplicationController
 
   # DELETE /likes/1
   # DELETE /likes/1.json
-  def destroy
-    @like.destroy
-    respond_to do |format|
-      format.html { redirect_to likes_url, notice: 'Like was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
+  def destroy; end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_like
-      @like = Like.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def like_params
-      params.require(:like).permit(:rate)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_like
+    @like = Like.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def like_params
+    params.require(:like).permit(:rate)
+  end
 end
