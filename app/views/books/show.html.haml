@@ -24,6 +24,9 @@
   = render 'likes/rating_bar'
 -else
   = render 'likes/simple_rating_bar'
+%p
+  Likes
+  = @book.likes.size
 
 %p Comments
 #comments_container
