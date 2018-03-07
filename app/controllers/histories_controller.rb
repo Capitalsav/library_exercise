@@ -3,6 +3,7 @@
 # Controller for histories
 class HistoriesController < ApplicationController
   before_action :set_history, only: :update
+  before_action :authenticate_user!, only: %i[create update]
   after_action :take_book, only: :create
   after_action :return_book, only: :update
 

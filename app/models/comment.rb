@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Model of user comments to book
 class Comment
   include Mongoid::Document
   field :text, type: String

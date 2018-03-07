@@ -1,5 +1,9 @@
+# frozen_string_literal: true
+
+# Controller for user likes to image
 class LikesController < ApplicationController
   before_action :set_like, only: :update
+  before_action :authenticate_user!, only: %i[create update]
 
   # GET /likes
   # GET /likes.json
@@ -18,14 +22,15 @@ class LikesController < ApplicationController
   # POST /likes
   # POST /likes.json
   def create
-    @like = Like.new(like_params)
-
+    @book = Book.find(params[:book_id])
+    @like = current_user.likes.create!(book_id: @book.id,
+                                       rate: params[:like][:rate])
     respond_to do |format|
       if @like.save
-        format.html { redirect_to @like, notice: 'Like was successfully created.' }
-        format.json { render :show, status: :created, location: @like }
+        format.html { redirect_back fallback_location: root_path }
+        format.json { render json: @like, status: :created }
       else
-        format.html { render :new }
+        format.html { redirect_back fallback_location: root_path }
         format.json { render json: @like.errors, status: :unprocessable_entity }
       end
     end
@@ -36,10 +41,10 @@ class LikesController < ApplicationController
   def update
     respond_to do |format|
       if @like.update(like_params)
-        format.html { redirect_to @like, notice: 'Like was successfully updated.' }
-        format.json { render :show, status: :ok, location: @like }
+        format.html { redirect_back fallback_location: root_path }
+        format.json { render json: @like, status: :ok }
       else
-        format.html { render :edit }
+        format.html { redirect_back fallback_location: root_path }
         format.json { render json: @like.errors, status: :unprocessable_entity }
       end
     end
@@ -51,12 +56,10 @@ class LikesController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_like
     @like = Like.find(params[:id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
   def like_params
     params.require(:like).permit(:rate)
   end

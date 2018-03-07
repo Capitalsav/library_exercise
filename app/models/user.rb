@@ -46,4 +46,12 @@ class User
   def will_save_change_to_email?
     false
   end
+
+  def liked?(book_id)
+    likes.where(book_id: book_id).first.present?
+  end
+
+  def user_like(book_id)
+    likes.where(book_id: book_id).first
+  end
 end

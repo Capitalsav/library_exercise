@@ -20,6 +20,11 @@
   - elsif @book.status == 'Out' && @book.histories.last.user == current_user
     = render 'histories/form_edit'
 
+- if user_signed_in?
+  = render 'likes/rating_bar'
+-else
+  = render 'likes/simple_rating_bar'
+
 %p Comments
 #comments_container
   - @book.comments.each do |comment|
