@@ -23,7 +23,7 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @book = Book.find(params[:book_id])
-    @comment = current_user.comments.create(book_id: @book.id,
+    @comment = current_user.comments.new(book_id: @book.id,
                                              text: params[:comment][:text])
     respond_to do |format|
       if @comment.save
