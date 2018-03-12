@@ -23,9 +23,8 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @book = Book.find(params[:book_id])
-    @comment = current_user.comments.create!(book_id: @book.id,
-                                             text: params[:comment][:text],
-                                             comment_time: DateTime.now)
+    @comment = current_user.comments.create(book_id: @book.id,
+                                             text: params[:comment][:text])
     respond_to do |format|
       if @comment.save
         format.html { redirect_back fallback_location: root_path }

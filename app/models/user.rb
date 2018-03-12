@@ -48,7 +48,7 @@ class User
   end
 
   def liked?(book_id)
-    likes.where(book_id: book_id).first.present?
+    user_like(book_id).present?
   end
 
   def user_like(book_id)

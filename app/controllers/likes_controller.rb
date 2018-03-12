@@ -23,7 +23,7 @@ class LikesController < ApplicationController
   # POST /likes.json
   def create
     @book = Book.find(params[:book_id])
-    @like = current_user.likes.create!(book_id: @book.id,
+    @like = current_user.likes.create(book_id: @book.id,
                                        rate: params[:like][:rate])
     respond_to do |format|
       if @like.save

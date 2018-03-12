@@ -33,7 +33,7 @@
   - @book.comments.each do |comment|
     %p
     = comment.user.name
-    = comment.comment_time.to_formatted_s(:long)
+    = comment.created_at.to_formatted_s(:long)
     = comment.text
 
 - if user_signed_in?
