@@ -1,5 +1,6 @@
 require 'rails_helper'
 
+
 RSpec.describe BooksController, type: :controller do
   before(:each) do
     @user = create(:user)
@@ -7,6 +8,12 @@ RSpec.describe BooksController, type: :controller do
   end
 
   describe 'GET #index' do
+    it 'assigns @books' do
+      book = create(:book)
+      get :index
+      expect(assigns(:books)).to eq([book])
+    end
+
     it 'render index template' do
       get :index
       expect(response).to render_template('index')
