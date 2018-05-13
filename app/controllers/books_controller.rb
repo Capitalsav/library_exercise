@@ -9,7 +9,6 @@ class BooksController < ApplicationController
   # GET /books.json
   def index
     @books = Kaminari.paginate_array(Book.all).page(params[:page])
-    puts @books
   end
   # GET /books/1
   # GET /books/1.json

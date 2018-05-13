@@ -6,4 +6,5 @@ class Like
   field :rate, type: Integer
   belongs_to :book, counter_cache: :likes_count
   belongs_to :user
+  validates :user_id, :book_id, presence: true
 end

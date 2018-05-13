@@ -38,6 +38,8 @@ class User
   field :avatar, type: String
 
   validates_processing_of :avatar
+  validates :email, presence: true
+  validates :encrypted_password, presence: true, length: { minimum: 6 }
 
   has_many :histories, dependent: :destroy
   has_many :likes, dependent: :destroy

@@ -7,4 +7,6 @@ class History
   field :returned_in, type: DateTime
   belongs_to :book, counter_cache: :histories_count
   belongs_to :user
+
+  validates :taken_in, presence: true
 end
