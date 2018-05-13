@@ -54,6 +54,6 @@ class BooksController < ApplicationController
   end
 
   def set_top_books
-    @top_books = Book.all.order_by(likes_count: :desc, histories_count: :desc).limit(5).map(&:attributes)
+    @top_books = Book.all.order_by(likes_count: :desc, histories_count: :desc).limit(5).to_a
   end
 end
