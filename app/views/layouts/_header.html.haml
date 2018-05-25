@@ -24,18 +24,17 @@
       .h_btm
         .cssmenu
           %ul
-            %li.active
-              %a{:href => "index.html"}
-                %span Home
+            %li#home-link
+              = link_to 'Home', root_path
             - if user_signed_in?
               %li.auth-header-right
                 = link_to 'Logout', destroy_user_session_path, method: :delete
-              %li.auth-header-right
+              %li.auth-header-right#profile-link
                 = link_to 'Profile', edit_user_registration_path
             - else
-              %li.auth-header-right
+              %li.auth-header-right#sign-up-link
                 = link_to 'Sign up', new_user_registration_path
-              %li.auth-header-right
+              %li.auth-header-right#sign-in-link
                 = link_to 'Log in', new_user_session_path
             .clear
         .clear

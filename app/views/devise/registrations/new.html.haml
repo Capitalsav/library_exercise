@@ -13,10 +13,6 @@
             = f.password_field :password, autocomplete: 'off', placeholder: 'Password', class: 'auth-input'
           .field
             = f.password_field :password_confirmation, autocomplete: 'off', placeholder: 'Password Confirmation', class: 'auth-input'
-          .field.avatar-select-btn
-            = f.label :avatar do
-              = f.file_field :avatar
-              = f.hidden_field :avatar_cache
           .actions
             = f.submit 'Sign up', class: 'btn btn-success submit-auth'
         .text-center.auth-links
