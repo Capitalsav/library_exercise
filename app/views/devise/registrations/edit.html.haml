@@ -15,10 +15,6 @@
             = f.password_field :password_confirmation, autocomplete: 'off', placeholder: 'Password Confirmation', class: 'auth-input'
           .field.text-center
             = f.password_field :current_password, autocomplete: 'off', placeholder: 'Confirmation password', class: 'auth-input'
-          .field.avatar-select-btn.text-center
-            = f.label :avatar do
-              = f.file_field :avatar
-              = f.hidden_field :avatar_cache
           .actions.text-center
             = f.submit 'Update', class: 'btn btn-success submit-auth'
         .text-center.auth-links.edit-auth-links
