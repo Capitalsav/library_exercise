@@ -9,11 +9,20 @@ class BooksController < ApplicationController
   # GET /books.json
   def index
     @books = Kaminari.paginate_array(Book.all).page(params[:page])
+    json_response = { "books": @books, "top_books": @top_books }
+    respond_to do |format|
+      format.html
+      format.json { render json: json_response, status: :ok }
+    end
   end
   # GET /books/1
   # GET /books/1.json
   def show
     @history = History.new
+    respond_to do |format|
+      format.html
+      format.json { render json: @book, status: :ok }
+    end
   end
 
   # GET /books/new
@@ -45,6 +54,6 @@ class BooksController < ApplicationController
   end
 
   def set_top_books
-    @top_books = Book.all.order_by(likes_count: :desc, histories_count: :desc).limit(5)
+    @top_books = Book.all.order_by(likes_count: :desc, histories_count: :desc).limit(5).to_a
   end
 end
