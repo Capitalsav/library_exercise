@@ -27,7 +27,7 @@
 .ruby-version
 .ruby-gemset
 
-/config/mongoid.yml
+#/config/mongoid.yml
 
 .env
 
