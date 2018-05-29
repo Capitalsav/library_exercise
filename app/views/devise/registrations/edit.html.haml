@@ -18,5 +18,4 @@
           .actions.text-center
             = f.submit 'Update', class: 'btn btn-success submit-auth'
         .text-center.auth-links.edit-auth-links
-          = render 'devise/shared/links'
           = link_to 'Cancel my account', registration_path(resource_name), data: { confirm: 'Are you sure?' }, method: :delete, class: 'text-center'
