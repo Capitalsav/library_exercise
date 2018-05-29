@@ -32,3 +32,5 @@
 .env
 
 /public/uploads
+config/database.yml
+config/mongoid.yml

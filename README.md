@@ -1,38 +1,29 @@
-# Library
+# Library exercise
 
-After you clone this project:
-
-* Open rails c
-
-* Run rake task to create books in database: 
-  
-    ##### rake create_books:create_new_books
-  
-### Project description:
-
-* Ruby version 
-
-    ##### 2.4.1
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Try it here:
 
 
+## Project description:
+- This project was made for improve rails with mongoid skills. 
+- This is test project, and all data, which it contain was provided only for scientific reasons. 
 
+## Technical details
 
+- ruby 2.4.1
+- rails 5.1.1
+- mongoid
+
+## To create default books run:
+- rake create_books:create_new_books
+
+## License
+[License](LICENSE)
+    
+## Authors:
+- Michael Bieliaiev
+- Anton Storchak
+
+# Task description:
 
 # Library exercise
 

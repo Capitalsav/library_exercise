@@ -158,5 +158,5 @@ test:
 production:
   clients:
     default:
-      database: mongoid_rails_production
-      hosts: ["<%= ENV['MONGODB_ADDRESS']%>:27017"]
+      uri: <%= ENV['MONGODB_URI'] %>
+
