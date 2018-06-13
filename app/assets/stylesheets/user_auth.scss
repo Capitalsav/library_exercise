@@ -52,4 +52,31 @@
   margin-bottom: 15px;
 }
 
+#error_explanation {
+  text-align: center;
+  width: 100% !important;
+  border: none !important;
+  background: none !important;
+  h2 {
+    text-align: center;
+    background: none !important;
+    color: red;
+  }
+  ul {
+    li {
+      list-style-type: none !important;
+    }
+  }
+}
 
+.field_with_errors {
+  display: inline-block !important;
+}
+
+.devise-shared-input {
+  height: 40px;
+  width: 280px;
+  border: none;
+  border-radius: 4px;
+  padding-left: 5px;
+}
