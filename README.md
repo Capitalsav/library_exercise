@@ -1,7 +1,7 @@
 # Library exercise
 
 ## Try it here:
-
+- https://library-exercise.herokuapp.com/
 
 ## Project description:
 - This project was made for improve rails with mongoid skills. 
