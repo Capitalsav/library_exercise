@@ -23,5 +23,7 @@ module LibraryExercise
     config.generators do |g|
       g.orm :mongoid
     end
+
+    config.assets.initialize_on_precompile = false
   end
 end
