@@ -12,6 +12,7 @@ class BooksController < ApplicationController
     json_response = { "books": @books, "top_books": @top_books }
     respond_to do |format|
       format.html
+      format.js {}
       format.json { render json: json_response, status: :ok }
     end
   end
