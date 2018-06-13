@@ -1,0 +1,66 @@
+.row
+  .col-xs-12#one-book-container
+    .container
+      %p.text-center.single-book-name
+        = @book.name
+      .row
+        .col-xs-10
+          - if user_signed_in?
+            = render 'likes/rating_bar'
+          -else
+            = render 'likes/simple_rating_bar'
+          Likes:
+          = @book.likes.size
+        .col-xs-2
+          - if user_signed_in?
+            #book_status_form_place
+            - if @book.status == 'In'
+              = render 'histories/form_create'
+            - elsif @book.status == 'Out' && @book.histories.last.user == current_user
+              = render 'histories/form_edit'
+      .row
+        .col-xs-3
+          = image_tag "books_images/#{@book.image}"
+        .col-xs-9
+          %p
+            %b.book-attribute-title Author:
+            = @book.author
+          %p.one-book-description
+            %b.book-attribute-title Description:
+            = @book.description
+      .row
+        .col-xs-2.col-xs-offset-5.single-book-center-line
+      #comments_container
+        - @book.comments.each do |comment|
+          .row
+            .col-xs-1.avatar-col
+              = image_tag comment.user.avatar.small_thumb, class: 'img-rounded'
+            .col-xs-11
+              .panel.panel-default
+                .panel-heading
+                  = comment.user.name
+                  = comment.created_at.to_formatted_s(:long)
+                .panel-body
+                  = comment.text
+      - if user_signed_in?
+        = render 'comments/form'
+      .row
+        .col-xs-2.col-xs-offset-5.single-book-center-line
+      .row.history
+        .col-xs-12.col-xs-offset-0
+          %table.table.history-table
+            %thead
+              %tr
+                %th.text-center.history-column-title Name
+                %th.text-center.history-column-title Author
+                %th.text-center.history-column-title Status
+            %tbody
+              - @book.ordered_histories.each do |history|
+                %tr
+                  %td.text-center
+                    = history.user.name
+                  %td.text-center
+                    = history.taken_in.to_formatted_s(:long)
+                  %td.text-center
+                    - if history.returned_in.present?
+                      = history.returned_in.to_formatted_s(:long)

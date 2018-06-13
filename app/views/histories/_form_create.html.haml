@@ -1,0 +1,5 @@
+= form_for @history, url: book_histories_path(@book.id), remote: true do |f|
+  = f.hidden_field :user_id, value: current_user.id
+  = f.hidden_field :book_id, value: @book.id
+  .actions
+    = f.submit 'TakeBook', class: 'btn btn-success'

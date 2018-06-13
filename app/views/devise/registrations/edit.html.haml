@@ -1,0 +1,21 @@
+.container-fluid
+  .site-content
+    .row
+      .col-xs-12.col-xs-offset-0
+        %p.text-center.login-title Edit
+        = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, multipart: true}) do |f|
+          = devise_error_messages!
+          .field.text-center
+            = f.text_field :name, autofocus: true, autocomplete: 'name', placeholder: 'Name', class: 'auth-input'
+          .field.text-center
+            = f.email_field :email, autofocus: true, autocomplete: 'email', placeholder: 'Email', class: 'auth-input'
+          .field.text-center
+            = f.password_field :password, autocomplete: 'off', placeholder: 'Password', class: 'auth-input'
+          .field.text-center
+            = f.password_field :password_confirmation, autocomplete: 'off', placeholder: 'Password Confirmation', class: 'auth-input'
+          .field.text-center
+            = f.password_field :current_password, autocomplete: 'off', placeholder: 'Confirmation password', class: 'auth-input'
+          .actions.text-center
+            = f.submit 'Update', class: 'btn btn-success submit-auth'
+        .text-center.auth-links.edit-auth-links
+          = link_to 'Cancel my account', registration_path(resource_name), data: { confirm: 'Are you sure?' }, method: :delete, class: 'text-center'

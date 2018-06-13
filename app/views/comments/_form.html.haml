@@ -1,0 +1,6 @@
+= form_for(current_user.comments.build(book_id: @book.id), url: book_comments_path(@book.id), remote: true) do |f|
+  = f.text_area :text, class: 'comments-text-area', placeholder: 'Type your comment here...'
+  .row
+    .col-xs-12.comment-button-col
+      = f.submit 'Comment', class: 'btn btn-success comment-submit pull-right'
+

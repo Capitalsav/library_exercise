@@ -1,0 +1,86 @@
+// Place all the styles related to the Books controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*root page*/
+#books-block {
+  background-color: #EEEEEE;
+}
+
+#all-books-blog {
+  background-color: #f6f6f6;
+  a:hover {
+    background: none !important;
+  }
+}
+
+#books-block {
+  a:hover {
+    background: none !important;
+  }
+}
+
+/*single book page*/
+#one-book-container {
+  background-color: #EEEEEE;
+}
+.single-book-name {
+  font-size: 24pt;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.book-attribute-title {
+  font-weight: bold;
+  font-size: 16pt;
+}
+.single-book-center-line {
+  margin-top: 15px;
+  border-bottom: 2px solid #757575;
+}
+.history {
+  margin-top: 15px;
+}
+.history-column-title {
+  font-weight: bold;
+}
+#comments_container {
+  margin-top: 15px;
+  max-height: 200px;
+  overflow-x: hidden;
+}
+.avatar-col {
+  padding-right: 0px !important;
+}
+.new_comment {
+  padding: 4px;
+  margin-top: 10px;
+}
+.comments-text-area {
+  width: 100%;
+  height: 200px;
+  border-radius: 3px;
+  border: none;
+  padding: 25px;
+}
+.one-book-description {
+  line-height: 1.6;
+  text-align: justify;
+}
+.histories-table-container {
+  max-height: 200px;
+  overflow-x: hidden;
+}
+
+.history-table {
+  tbody {
+    display:block;
+    max-height:160px;
+    overflow-y:scroll;
+  }
+  thead, tbody tr {
+    display:table;
+    width:100%;
+    table-layout:fixed;
+  }
+}

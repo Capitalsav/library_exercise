@@ -1,0 +1,2 @@
+$('#books').html('<%= escape_javascript render'books/book',{@books => @books} %>');
+$('#books-pagination').html('<%= escape_javascript(paginate(@books, :remote => true, :theme => 'twitter-bootstrap-3').to_s) %>');

@@ -1,0 +1,82 @@
+.login-title {
+  font-size: xx-large;
+  font-weight: bold;
+  margin-top: 100px;
+  margin-bottom: 10px;
+}
+
+#new_user {
+  text-align: center;
+  border-radius: 14px;
+  background-color: #F5F5F5;
+}
+
+.auth-input {
+  height: 40px;
+  width: 280px;
+  padding-left: 5px;
+  border: none;
+  border-radius: 4px;
+}
+
+.submit-auth {
+  height: 40px;
+  width: 280px;
+  background-color: #E91E63 !important;
+  border-color: #E91E63 !important;
+}
+
+.auth-links {
+  a {
+    color: #E91E63 !important;
+    background: none !important;
+  }
+
+  a:visited {
+    color: #E91E63 !important;
+    background: none !important;
+  }
+}
+
+@media (min-width: 890px) {
+  .avatar-select-btn {
+    margin-left: 5px;
+  }
+}
+
+.cancel-account-btn {
+  margin-bottom: 10px;
+}
+
+.edit-auth-links {
+  margin-bottom: 15px;
+}
+
+#error_explanation {
+  text-align: center;
+  width: 100% !important;
+  border: none !important;
+  background: none !important;
+  h2 {
+    text-align: center;
+    background: none !important;
+    color: red;
+  }
+  ul {
+    li {
+      list-style-type: none !important;
+    }
+  }
+}
+
+.field_with_errors {
+  display: inline-block !important;
+}
+
+.devise-shared-input {
+  height: 40px;
+  width: 280px;
+  border: none;
+  border-radius: 4px;
+  padding-left: 5px;
+}

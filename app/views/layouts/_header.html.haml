@@ -1,0 +1,40 @@
+.btm_border
+  .h_bg
+    .wrap
+      .header
+        .logo
+          %h1
+            %a{:href => "index.html"}
+              %img{:alt => "", :src => "images/logo.png"}/
+        .social-icons
+          %ul
+            %li
+              %a.facebook{:href => "#", :target => "_blank"}
+            %li
+              %a.twitter{:href => "#", :target => "_blank"}
+            %li
+              %a.googleplus{:href => "#", :target => "_blank"}
+            %li
+              %a.pinterest{:href => "#", :target => "_blank"}
+            %li
+              %a.dribbble{:href => "#", :target => "_blank"}
+            %li
+              %a.vimeo{:href => "#", :target => "_blank"}
+        .clear
+      .h_btm
+        .cssmenu
+          %ul
+            %li#home-link
+              = link_to 'Home', root_path
+            - if user_signed_in?
+              %li.auth-header-right
+                = link_to 'Logout', destroy_user_session_path, method: :delete
+              %li.auth-header-right#profile-link
+                = link_to 'Profile', edit_user_registration_path
+            - else
+              %li.auth-header-right#sign-up-link
+                = link_to 'Sign up', new_user_registration_path
+              %li.auth-header-right#sign-in-link
+                = link_to 'Log in', new_user_session_path
+            .clear
+        .clear

@@ -1,0 +1,14 @@
+.container-fluid
+  .site-content
+    .row
+      .col-xs-12.col-xs-offset-0
+        %p.text-center.login-title Log in
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .field
+            = f.email_field :email, autofocus: true, autocomplete: 'email', placeholder: 'Email', class: 'auth-input'
+          .field
+            = f.password_field :password, autocomplete: 'off', placeholder: 'Password', class: 'auth-input'
+          .actions
+            = f.submit 'Log in', class: 'btn btn-success submit-auth'
+        .text-center.auth-links
+          = render 'devise/shared/links'

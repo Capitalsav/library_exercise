@@ -1,0 +1,19 @@
+- if current_user.liked?(@book.id)
+  - 1.upto(5) do |star|
+    .rating-block
+      = form_for(current_user.likes.build(book_id: @book.id), url: book_like_path(@book.id, current_user.user_like(@book.id)), remote: true, method: :patch) do |f|
+        = f.hidden_field :rate, value: star
+        - if star <= @book.book_rating
+          = image_submit_tag('full_star.png')
+        - if star > @book.book_rating
+          = image_submit_tag('empty_star.png')
+- else
+  - 1.upto(5) do |star|
+    .rating-block
+      = form_for(current_user.likes.build(book_id: @book.id), url: book_likes_path(@book.id), remote: true) do |f|
+        = f.hidden_field :rate, value: star
+        - if star <= @book.book_rating
+          = image_submit_tag('full_star.png')
+        - if star > @book.book_rating
+          = image_submit_tag('empty_star.png')
+

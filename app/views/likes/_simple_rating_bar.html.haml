@@ -1,0 +1,6 @@
+- 1.upto(5) do |star|
+  .rating-block
+    - if star <= @book.book_rating
+      = image_tag('full_star.png')
+    - if star > @book.book_rating
+      = image_tag('empty_star.png')

@@ -1,5 +1,32 @@
 # Library exercise
 
+## Try it here:
+
+
+## Project description:
+- This project was made for improve rails with mongoid skills. 
+- This is test project, and all data, which it contain was provided only for scientific reasons. 
+
+## Technical details
+
+- ruby 2.4.1
+- rails 5.1.1
+- mongoid
+
+## To create default books run:
+- rake create_books:create_new_books
+
+## License
+[License](LICENSE)
+    
+## Authors:
+- Michael Bieliaiev
+- Anton Storchak
+
+# Task description:
+
+# Library exercise
+
 Test exercise for Rails developers.
 First of all - this is test task which purpose is to check the level of candidate knowledge and process of thinking.
 So don't be upset if you have not finished. Commit and push regularly so i can see how you think. This is important! Do not push whole app in the one commit.
